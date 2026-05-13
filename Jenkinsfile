@@ -1,14 +1,14 @@
 pipeline {
  agent any
  tools {
- maven 'Maven3'
+ maven 'Maven'
  jdk 'JDK21'
  }
  stages {
  stage('Checkout') {
  steps {
  git branch:'main',
- url:'https://github.com/Ankith0505/Maven-project.git'
+ url:'https://github.com/SKYFALLrumbles/maven-app.git'
  }
  }
  stage('Build') {
