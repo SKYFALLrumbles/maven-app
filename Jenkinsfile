@@ -7,7 +7,7 @@ pipeline {
  stages {
  stage('Checkout') {
  steps {
- git branch: 'main',
+ git branch: 'master',
  url: 'https://github.com/SKYFALLrumbles/maven-app.git'
  }
  }
