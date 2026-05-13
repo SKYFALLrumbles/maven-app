@@ -7,8 +7,8 @@ pipeline {
  stages {
  stage('Checkout') {
  steps {
- git branch:'main',
- url:'https://github.com/SKYFALLrumbles/maven-app.git'
+ git branch: 'main',
+ url: 'https://github.com/SKYFALLrumbles/maven-app.git'
  }
  }
  stage('Build') {
@@ -32,20 +32,4 @@ pipeline {
  }
  }
  }
- post {
- success {
- emailext (
- subject: "SUCCESS: ${JOB_NAME} #${BUILD_NUMBER}",
- body: "Build succeeded!\nCheck: ${BUILD_URL}",
- to: "ankithshetty0505@gmail.com"
- )
- }
- failure {
- emailext (
- subject: "FAILED: ${JOB_NAME} #${BUILD_NUMBER}",
- body: "Build failed!\nCheck: ${BUILD_URL}",
- to: "ankithshetty0505@gmail.com"
- )
- }
- } 
 }
